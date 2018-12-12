@@ -1,5 +1,8 @@
 def check(num)
   isbn = num.tr("-, ", "")
-  isbn !~ /\D/ 
-
+  if isbn !~ /\D/
+    return isbn
+  else
+    return "not valid"
+  end
 end

@@ -12,6 +12,9 @@ class Testing < Minitest::Test
 		assert_equal("12353234", check("123 53 234"))
 	end
   def test_for_symbols
-		assert_equal("", check("!@$%^&*"))
+		assert_equal("not valid", check("!@$%^&*"))
 	end
+  def test_for_letters
+    assert_equal("", check("ak-js jas-ss"))
+  end
 end
