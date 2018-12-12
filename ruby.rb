@@ -1,3 +1,5 @@
-def check(isbn)
-  isbn.tr("-, ", "")
+def check(num)
+  isbn = num.tr("-, ", "")
+  isbn !~ /\D/ 
+
 end

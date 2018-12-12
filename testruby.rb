@@ -11,4 +11,7 @@ class Testing < Minitest::Test
   def test_for_removing_space
 		assert_equal("12353234", check("123 53 234"))
 	end
+  def test_for_symbols
+		assert_equal("", check("!@$%^&*"))
+	end
 end
