@@ -1,3 +1,3 @@
 def check(isbn)
-  isbn.tr("-", "")
+  isbn.tr("-, ", "")
 end
