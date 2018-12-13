@@ -15,7 +15,7 @@ class Testing < Minitest::Test
 		assert_equal("not valid", check("!@$%^&*"))
 	end
   def test_for_letters
-    assert_equal("not valid", check("ak-js jas-ss"))
+    assert_equal("not valid", check("ak-js jxs-ss"))
   end
   def test_for_letters_and_numbers
     assert_equal("not valid", check("a9-js j2s-4s"))
@@ -24,6 +24,6 @@ class Testing < Minitest::Test
     assert_equal("not valid", check("a9-@js% j*2s-4s"))
   end
   def test_for_numbers_and_x
-    assert_equal("", check("98-87 2-4x"))
+    assert_equal("988724x", check("98-87 2-4x"))
   end
 end
