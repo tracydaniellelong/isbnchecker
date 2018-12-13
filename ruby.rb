@@ -1,8 +1,8 @@
-def check(num)
-  isbn = num.tr("-, ", "")
-  if isbn =~ /[!@~#$%^&*()a-wyz]/
+def check(char)
+  isbn = char.tr("-, ", "")
+  if isbn =~ /[!@~#$%^&*()a-wyz]/ || isbn.length != 10   
      return "not valid"
   else
-     return isbn
-   end
+    return isbn
+  end
 end

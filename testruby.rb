@@ -6,10 +6,10 @@ class Testing < Minitest::Test
 		assert_equal(1, 1)
 	end
   def test_for_removing_dash
-		assert_equal("12353234", check("123-53-234"))
+		assert_equal("1235763234", check("123-5763-234"))
 	end
   def test_for_removing_space
-		assert_equal("12353234", check("123 53 234"))
+		assert_equal("not valid", check("123 53 234"))
 	end
   def test_for_symbols
 		assert_equal("not valid", check("!@$%^&*"))
@@ -24,6 +24,12 @@ class Testing < Minitest::Test
     assert_equal("not valid", check("a9-@js% j*2s-4s"))
   end
   def test_for_numbers_and_x
-    assert_equal("988724x", check("98-87 2-4x"))
+    assert_equal("not valid", check("98-87 2-4x"))
+  end
+  def test_for_valid_isbn_10
+    assert_equal("877195869x", check("877195869x"))
+  end
+  def test_for_valid_isbn_13
+    assert_equal("", check("9780470059029"))
   end
 end
