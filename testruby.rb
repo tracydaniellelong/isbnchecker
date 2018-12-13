@@ -26,10 +26,13 @@ class Testing < Minitest::Test
   def test_for_numbers_and_x
     assert_equal("not valid", check("98-87 2-4x"))
   end
-  def test_for_valid_isbn_10
+  def test_for_10_digits
     assert_equal("877195869x", check("877195869x"))
   end
-  def test_for_valid_isbn_13
+  def test_for_13_digits
     assert_equal("9780470059029", check("9780470059029"))
+  end
+  def test_for_valid_isbn_10
+    assert_equal("", isbn_valid("877195869x"))
   end
 end
