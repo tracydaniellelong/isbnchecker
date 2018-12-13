@@ -30,6 +30,6 @@ class Testing < Minitest::Test
     assert_equal("877195869x", check("877195869x"))
   end
   def test_for_valid_isbn_13
-    assert_equal("", check("9780470059029"))
+    assert_equal("9780470059029", check("9780470059029"))
   end
 end
