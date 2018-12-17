@@ -22,6 +22,6 @@ def check(str)
     }
       isbn[12].to_i == (10 - (counter % 10)) % 10
   else
-    return "not valid"
+    return false
   end
 end

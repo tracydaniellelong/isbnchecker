@@ -9,22 +9,22 @@ class Testing < Minitest::Test
 		assert_equal(true, check("123-5763-234"))
 	end
   def test_for_removing_space
-		assert_equal("not valid", check("123 53 234"))
+		assert_equal(false, check("123 53 234"))
 	end
   def test_for_symbols
-		assert_equal("not valid", check("!@$%^&*"))
+		assert_equal(false, check("!@$%^&*"))
 	end
   def test_for_letters
-    assert_equal("not valid", check("ak-js jxs-ss"))
+    assert_equal(false, check("ak-js jxs-ss"))
   end
   def test_for_letters_and_numbers
-    assert_equal("not valid", check("a9-js j2s-4s"))
+    assert_equal(false, check("a9-js j2s-4s"))
   end
   def test_for_letters_numbers_and_symbols
-    assert_equal("not valid", check("a9-@js% j*2s-4s"))
+    assert_equal(false, check("a9-@js% j*2s-4s"))
   end
   def test_for_numbers_and_x
-    assert_equal("not valid", check("98-87 2-4x"))
+    assert_equal(false, check("98-87 2-4x"))
   end
   def test_for_x_not_at_end
     assert_equal(false, check("877195x869"))
