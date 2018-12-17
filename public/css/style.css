@@ -1,0 +1,8 @@
+body {
+  background: url("/images/book.jpg");
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
