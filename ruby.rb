@@ -3,9 +3,17 @@ def check(str)
   if isbn =~ /[x0-9]/ && isbn.length == 10
     counter = 0
     total = 0
-    isbn.split("")[0..8].each do |value|
-      total += (value.to_i * (counter += 1))
+    isbn.split("")[0..8].each do |value, index|
+        if isbn.split("")[0..8].include?("x")
+          return false
+        else
+          total += (value.to_i * (counter += 1))
+          total % 11 == isbn[9]
+        end
     end
+      if isbn.split("")[9] == "x" && total % 11 == 10
+        return true
+      end
     isbn[9].to_i == total % 11
   elsif isbn =~ /[0-9]/ && isbn.length == 13
     counter = 0
