@@ -11,7 +11,7 @@ post '/home' do
 end
 
 get '/result' do
-  isbn = check(params[:isbn])
-
-  erb :results, locals: {isbn: isbn}
+  isbn = params[:isbn]
+  results = check(isbn)
+  erb :results, locals: {isbn: isbn, results: results}
 end
