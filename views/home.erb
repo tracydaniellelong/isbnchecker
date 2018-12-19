@@ -4,8 +4,8 @@
 
 <body>
 <form method = 'post' action = '/home'>
-  <h2>Enter a 10 or 13 digit ISBN number:<br></h2>
-  <input type = "text" pattern="[x0-9]+([-\,]" maxlength = "20" name = "isbn">
-  <input type = "submit" value = "submit">
+<h2>  Choose a file:</h2><br>
+<input type = "file" name = "isbn" accept = ".csv">
+<input type = "submit" value = "submit" onclick = "read('csv')">
 </form>
 </body>

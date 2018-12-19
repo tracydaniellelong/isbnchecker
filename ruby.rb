@@ -1,4 +1,10 @@
+require 'csv'
+
+
 def check(str)
+  if str.empty? == true
+    return false
+  end
   isbn = str.tr("-, ", "")
   if isbn =~ /[x0-9]/ && isbn.length == 10
     counter = 0
@@ -23,5 +29,17 @@ def check(str)
       isbn[12].to_i == (10 - (counter % 10)) % 10
   else
     return false
+  end
+end
+
+def read(csv)
+  isbnarray = Array.new
+  CSV.foreach(csv) do |row|
+    isbnarray.push([row[1], check(row[1])])
+  end
+  CSV.open("isbnoutput.csv", "wb") do |row|
+    isbnarray.each do |isbn|
+      row << isbn
+    end
   end
 end

@@ -44,4 +44,5 @@ class Testing < Minitest::Test
 	def test_for_isbn_10_0
     assert_equal(true, check("0000000000"))
   end
+
 end

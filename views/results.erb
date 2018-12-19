@@ -3,10 +3,10 @@
 </head>
 
 <body>
-your isbn: <%= isbn %> is
-  <% if results == true %>
-      Valid
-  <% else %>
-      Invalid
-  <% end %>
+  <% counter = 0 %>
+<% file.each do |line| %>
+<h2><%= counter += 1 %> your isbn <%= line.join(",").gsub("true", "Valid").gsub("false", "Invalid").gsub(",", " is ") %> 
+
+<% end %>
+  </h2>
 </body>

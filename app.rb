@@ -12,6 +12,6 @@ end
 
 get '/result' do
   isbn = params[:isbn]
-  results = check(isbn)
-  erb :results, locals: {isbn: isbn, results: results}
+  file = read(isbn)
+  erb :results, locals: {isbn: isbn, file: file}
 end
