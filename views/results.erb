@@ -3,10 +3,16 @@
 </head>
 
 <body>
+<% if enter == "choose" %>
   <% counter = 0 %>
-<% file.each do |line| %>
-<h2><%= counter += 1 %> your isbn <%= line.join(",").gsub("true", "Valid").gsub("false", "Invalid").gsub(",", " is ") %> 
-
+  <% file.each do |line| %>
+  <h2><%= counter += 1 %> your isbn <%= line.join(",").gsub("true", "Valid").gsub("false", "Invalid").gsub(",", " is ") %>
+  <% end %>
+<% else %>
+  <h2>your isbn <%= isbn %> is
+    <% if input == true %> Valid
+    <% else %> Invalid
+    <% end %>
 <% end %>
   </h2>
 </body>

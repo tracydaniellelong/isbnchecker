@@ -6,12 +6,29 @@ get '/' do
 end
 
 post '/home' do
-  isbn = params[:isbn]
-  redirect '/result?isbn=' + isbn
+  enter = params[:enter]
+  redirect '/enter?enter=' + enter
 end
 
-get '/result' do
+get '/enter' do
+  enter = params[:enter]
   isbn = params[:isbn]
-  file = read(isbn)
-  erb :results, locals: {isbn: isbn, file: file}
+  erb :enter, locals: {enter: enter, isbn: isbn}
+end
+
+post '/enter' do
+  isbn = params[:isbn]
+  enter = params[:enter]
+  redirect '/results?isbn=' + isbn + '&enter=' + enter
+end
+
+get '/results' do
+  enter = params[:enter]
+  isbn = params[:isbn]
+  if enter == "enter"
+    input = check(isbn)
+  else
+    file = read(isbn)
+  end
+  erb :results, locals: {enter: enter, isbn: isbn, file: file, input: input}
 end
