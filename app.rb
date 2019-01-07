@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'aws-sdk'
 require_relative 'ruby'
+require_relative 'bucket'
+load 'local_ENV'
+
 
 get '/' do
   erb :home
