@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'aws-sdk'
 require_relative 'ruby'
 
 get '/' do
